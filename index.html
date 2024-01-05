@@ -3,6 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+		<script>
+  if (typeof SharedArrayBuffer === 'undefined') {
+    self.SharedArrayBuffer = class {
+      constructor() {
+        throw new Error('SharedArrayBuffer is not supported in this browser.');
+      }
+    };
+  }
+</script>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<title>Test Website</title>
 		<style>
